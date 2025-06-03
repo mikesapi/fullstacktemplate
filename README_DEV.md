@@ -37,16 +37,27 @@ CREATE DATABASE app;
 Activate the virtual environment where your backend dependencies are installed:
 
 ```bash
+cd backend
+uv sync
 source .venv/bin/activate
 ```
 
 ---
+
+
+## 5. Install the frontend
+```bash
+nvm install
+nvm use
+npm install
+```
 
 ## 4. Generate API Client from OpenAPI Spec
 
 Run the script to generate the API client code from the OpenAPI specification. This helps keep the frontend and backend API contracts in sync:
 
 ```bash
+cd ../
 bash scripts/generate-client.sh
 ```
 
@@ -93,3 +104,15 @@ fastapi dev app/main.py
 This will launch the backend server and make it ready to serve API requests.
 
 ---
+
+## 9. Launch the Frontend Server
+```bash
+npm run dev
+```
+
+---
+## 10. Check the database
+```
+SELECT * FROM "user";
+```
+Should see the admin user there.
